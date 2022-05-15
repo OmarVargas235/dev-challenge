@@ -1,15 +1,11 @@
 import React from "react";
 import styled from 'styled-components';
-// import ApolloClient from "apollo-boost";
-import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client";
+import { ApolloProvider } from "@apollo/client";
 
+import GlobalProvider from './context/globalProvider';
 import Search from './main/search/';
 import Cards from './main/cards';
-
-const client = new ApolloClient({
-    uri: "https://rickandmortyapi.com/graphql",
-    cache: new InMemoryCache(),
-});
+import { client } from './graphql/apolloClient';
 
 const Main = styled.main`
     padding: 0 100px;
@@ -22,10 +18,12 @@ const Main = styled.main`
 
 const App = () => (
     <ApolloProvider client={client}>
-        <Main>
-            <Search />
-            <Cards />
-        </Main>
+        <GlobalProvider>
+            <Main>
+                <Search />
+                <Cards />
+            </Main>
+        </GlobalProvider>
     </ApolloProvider>
 );
 export default App;

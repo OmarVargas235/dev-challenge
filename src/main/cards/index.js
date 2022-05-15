@@ -1,18 +1,26 @@
-import React from 'react';
+import React, { useContext } from 'react';
 
 import { ContainerCards } from './styled';
 import CardPage from './components/cardPage';
+import { GlobalContext } from '../../context/globalContext';
 
-const Cards = () => (
-    <ContainerCards>
-        {
-            [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((data, index) => (
-                <CardPage
-                    key={index}
-                />
-            ))
-        }
-    </ContainerCards>
-);
+const Cards = () => {
+
+    const { globalState:{ isContinent, countriesFilter } } = useContext(GlobalContext);
+
+    return (
+        <ContainerCards>
+            {
+                countriesFilter.map((country, index) => (
+                    <CardPage
+                        key={index}
+                        country={country}
+                        isContinent={isContinent}
+                    />
+                ))
+            }
+        </ContainerCards>
+    );
+}
 
 export default Cards;

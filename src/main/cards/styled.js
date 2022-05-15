@@ -49,3 +49,17 @@ export const Header = styled.header`
         margin-left: 10px;
     }
 `;
+
+export const Body = styled.section`
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+
+    article {
+        display: flex;
+    }
+
+    .ml {
+        margin-left: 5px;
+    }
+`;
