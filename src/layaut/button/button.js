@@ -3,7 +3,7 @@ import React, { useRef } from 'react';
 import { useRippleEffect } from '../../hooks/useRippleEffect';
 import { ButtonStyled } from './styled';
 
-const Button = ({ children, classes="", color="", fullWidth=false, icon, edge=null, disabled=false, type="button", handleClick=()=>{} }) => {
+const Button = ({ children, classes="", color="", fullWidth=false, icon, edge=null, type="button", handleClick=()=>{}, id=null }) => {
 
     const optionRef = useRef(null);
 
@@ -18,8 +18,7 @@ const Button = ({ children, classes="", color="", fullWidth=false, icon, edge=nu
             fullWidth={fullWidth}
             edge={edge}
             type={type}
-            onClick={handleClick}
-            disabled={disabled}
+            onClick={() => handleClick(id)}
         >
             {edge === 'start' && icon}
 

@@ -32,8 +32,15 @@ export const CotainerButton = styled.article`
     display: flex;
 
     .continent {
-        margin-right: 20px;
         color: #494949;
+    }
+
+    .mr {
+        margin-right: 15px;
+    }
+
+    .ml {
+        margin-left: 15px;
     }
 
     @media (max-width: 700px) {
