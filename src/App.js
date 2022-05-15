@@ -1,22 +1,31 @@
 import React from "react";
-import "./App.css";
-import ApolloClient from "apollo-boost";
-import { ApolloProvider } from "@apollo/react-hooks";
+import styled from 'styled-components';
+// import ApolloClient from "apollo-boost";
+import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client";
+
+import Search from './main/search/';
+import Cards from './main/cards';
 
 const client = new ApolloClient({
-  uri: "https://48p1r2roz4.sse.codesandbox.io",
+    uri: "https://rickandmortyapi.com/graphql",
+    cache: new InMemoryCache(),
 });
 
+const Main = styled.main`
+    padding: 0 100px;
+
+    @media (max-width: 426px) {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+`;
+
 const App = () => (
-  <ApolloProvider client={client}>
-    <div>
-      <h2>
-        My first Apollo app{" "}
-        <span role="img" aria-label="Rocket">
-          🚀
-        </span>
-      </h2>
-    </div>
-  </ApolloProvider>
+    <ApolloProvider client={client}>
+        <Main>
+            <Search />
+            <Cards />
+        </Main>
+    </ApolloProvider>
 );
 export default App;
