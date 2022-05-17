@@ -2,11 +2,11 @@ import React, { useContext } from 'react';
 
 import { ContainerCards } from './styled';
 import CardPage from './components/cardPage';
-import { GlobalContext } from '../../context/globalContext';
+import { GlobalContext } from '../../context/globals/globalContext';
 
 const Cards = () => {
 
-    const { globalState:{ isContinent, countriesFilter } } = useContext(GlobalContext);
+    const { globalState:{ isContinent, countriesFilter, darkMode } } = useContext(GlobalContext);
 
     return (
         <ContainerCards>
@@ -16,6 +16,7 @@ const Cards = () => {
                         key={index}
                         country={country}
                         isContinent={isContinent}
+                        darkMode={darkMode}
                     />
                 ))
             }

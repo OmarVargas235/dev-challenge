@@ -51,3 +51,7 @@ export const ContainerInput = styled.div`
         color: ${({ isError }) => isError ? '#D32F2F' : '#424242'};
     }
 `;
+
+export const Label = styled.span`
+    color: ${({ theme }) => theme.text.primary};
+`;

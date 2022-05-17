@@ -1,3 +1,4 @@
 export const DATA_COUNTRIES = 'DATA_COUNTRIES';
 export const DATA_COUNTRIES_FILTER = 'DATA_COUNTRIES_FILTER';
 export const CONTINENT = 'CONTINENT';
+export const DARK_MODE = 'DARK_MODE';

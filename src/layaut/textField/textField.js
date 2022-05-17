@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ContainerTextField, Input, ContainerInput } from './styled';
+import { ContainerTextField, Input, ContainerInput, Label } from './styled';
 
 const TextField = ({ classes="", icon=null, edge=null, placeholder="", label, type="text", name, handleChange, isError=false }) => {
 
@@ -10,7 +10,7 @@ const TextField = ({ classes="", icon=null, edge=null, placeholder="", label, ty
         onBlur={() => setIsFocus(false)}
     >
 
-        { label ? <span>{label}</span> : null }
+        { label ? <Label>{label}</Label> : null }
 
         <ContainerInput
             isFocus={isFocus}

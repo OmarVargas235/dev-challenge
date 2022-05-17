@@ -4,11 +4,10 @@ import { GoMail } from "react-icons/go";
 import { Text } from '../../../layaut/text';
 import { Card, Header, Body } from '../styled';
 
-const CardPage = ({ country, isContinent }) => (
+const CardPage = ({ country, isContinent, darkMode }) => (
     <section>
         <Text
             size="25px"
-            color="#373737"
             className='text'
             as="h2"
         >{isContinent ? country.continent.name : country.languages.map(({ name }) => name).join()}</Text>
@@ -24,7 +23,7 @@ const CardPage = ({ country, isContinent }) => (
                     <span>Capital:</span>
 
                     <Text
-                        color="#919191"
+                        color={darkMode ? "#FFECEC" : "#919191"}
                         as="p"
                         className='ml'
                     >{ country.capital }</Text>
@@ -34,7 +33,7 @@ const CardPage = ({ country, isContinent }) => (
                     <span>Moneda:</span>
 
                     <Text
-                        color="#919191"
+                        color={darkMode ? "#FFECEC" : "#919191"}
                         as="p"
                         className='ml'
                     >{ country.currency }</Text>
@@ -44,7 +43,7 @@ const CardPage = ({ country, isContinent }) => (
                     <span>Idioma:</span>
 
                     <Text
-                        color="#919191"
+                        color={darkMode ? "#FFECEC" : "#919191"}
                         as="p"
                         className='ml'
                     >{ country.native }</Text>

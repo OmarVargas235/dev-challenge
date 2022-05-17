@@ -16,14 +16,14 @@ export const ButtonStyled = styled.button`
     padding: 6px 36px;
     border-radius: 4px;
     color: #fff;
-    background-color: ${({ color }) => color || '#1976d2'};
+    background-color: ${({ color, theme }) => color || theme.bg.button};
     box-shadow: 0px 3px 1px -2px rgb(0 0 0 / 20%), 0px 2px 2px 0px rgb(0 0 0 / 14%), 0px 1px 5px 0px rgb(0 0 0 / 12%);
     height: 40px;
     font-weight: bold;
 
     &:hover {
         text-decoration: none;
-        background-color: ${({ color }) => color || '#1976d2'};
+        background-color: ${({ color, theme }) => color || theme.bg.button};
         filter: brightness(0.9);
         //box-shadow: 0px 2px 4px -1px rgb(0 0 0 / 20%), 0px 4px 5px 0px rgb(0 0 0 / 14%), 0px 1px 10px 0px rgb(0 0 0 / 12%);
     }
