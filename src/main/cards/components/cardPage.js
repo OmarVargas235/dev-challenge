@@ -4,8 +4,8 @@ import { GoMail } from "react-icons/go";
 import { Text } from '../../../layaut/text';
 import { Card, Header, Body } from '../styled';
 
-const CardPage = ({ country, isContinent, darkMode }) => (
-    <section>
+const CardPage = ({ country, isContinent, darkMode, lastDataTableElementRef }) => (
+    <section ref={lastDataTableElementRef}>
         <Text
             size="25px"
             className='text'
