@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 
 import SearchInputPage from '../components/searchInputPage';
-import { GlobalContext } from '../../../context/globalContext';
+import { GlobalContext } from '../../../context/globals/globalContext';
 
 const SearchInput = () => {
 

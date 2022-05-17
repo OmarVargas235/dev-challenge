@@ -34,10 +34,21 @@ export const ContainerCards = styled.section`
 `;
 
 export const Card = styled.div`
-    border: 2px solid #7A7A7A;
+    border: 2px solid ${({ theme }) => theme.bg.borderCard};
     border-radius: 8px;
     padding: 20px;
-    background-color: white;
+    background-color: ${({ theme }) => theme.bg.card};
+    color: ${({ theme }) => theme.text.primary};
+    cursor: pointer;
+    transform: scale(1);
+    transition: transform .2s ease-in;
+
+    &:hover {
+        transform: scale(1.1);
+        -webkit-box-shadow: -1px -2px 20px -6px rgba(0,0,0,0.75);
+        -moz-box-shadow: -1px -2px 20px -6px rgba(0,0,0,0.75);
+        box-shadow: -1px -2px 20px -6px rgba(0,0,0,0.75);
+    }
 `;
 
 export const Header = styled.header`
@@ -47,6 +58,9 @@ export const Header = styled.header`
 
     .card__header-text {
         margin-left: 10px;
+        font-weight: bold;
+        font-size: 20px;
+        color: ${({ theme }) => theme.text.cardTitle};
     }
 `;
 
@@ -61,5 +75,9 @@ export const Body = styled.section`
 
     .ml {
         margin-left: 5px;
+    }
+
+    span {
+        font-weight: bold;
     }
 `;

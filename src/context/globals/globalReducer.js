@@ -1,4 +1,4 @@
-import { DATA_COUNTRIES, DATA_COUNTRIES_FILTER, CONTINENT } from './types';
+import { DATA_COUNTRIES, DATA_COUNTRIES_FILTER, CONTINENT, DARK_MODE } from './types';
 
 export const globalReducer = (state, { type, payload }) => {
 
@@ -12,6 +12,9 @@ export const globalReducer = (state, { type, payload }) => {
 
         case CONTINENT:
             return { ...state, isContinent: payload };
+
+        case DARK_MODE:
+            return { ...state, darkMode: payload };
 
         default:
             return state;

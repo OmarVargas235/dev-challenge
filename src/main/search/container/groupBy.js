@@ -3,7 +3,7 @@ import React, { useState, useContext } from 'react';
 import { ContainerGroupBy, CotainerButton } from '../styled';
 import { Text } from '../../../layaut/text';
 import Button from '../../../layaut/button/button';
-import { GlobalContext } from '../../../context/globalContext';
+import { GlobalContext } from '../../../context/globals/globalContext';
 
 const idContinent = 1;
 
