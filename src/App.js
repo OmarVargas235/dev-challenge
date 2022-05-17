@@ -8,6 +8,7 @@ import Search from './main/search/';
 import Cards from './main/cards';
 import { client } from './graphql/apolloClient';
 import Toggle from './layaut/toggle/toggle';
+import ArrowButtonUp from './layaut/arrowButtonUp';
 import { useTheme } from './hooks/useTheme';
 
 const Main = styled.main`
@@ -29,8 +30,9 @@ const App = () => {
         <ApolloProvider client={client}>
             <BCThemeProvider darkMode={darkMode}>
                 <GlobalProvider darkMode={darkMode}>
+                    <ArrowButtonUp />
+
                     <Main>
-        
                         <Toggle
                             handleClick={toggleTheme}
                         />
