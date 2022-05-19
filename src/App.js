@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { ApolloProvider } from "@apollo/client";
 
 import GlobalProvider from './context/globals/globalProvider';
-import BCThemeProvider from './context/bCThemeProvider';
+import ThemeProvider from './context/themeProvider';
 import Search from './main/search/';
 import Cards from './main/cards';
 import { client } from './graphql/apolloClient';
@@ -28,7 +28,7 @@ const App = () => {
     
     return (
         <ApolloProvider client={client}>
-            <BCThemeProvider darkMode={darkMode}>
+            <ThemeProvider darkMode={darkMode}>
                 <GlobalProvider darkMode={darkMode}>
                     <ArrowButtonUp />
 
@@ -41,7 +41,7 @@ const App = () => {
                         <Cards />
                     </Main>
                 </GlobalProvider>
-            </BCThemeProvider>
+            </ThemeProvider>
         </ApolloProvider>
     );
 }
